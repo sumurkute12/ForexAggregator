@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem">
+    <div class="widget-card-1" >
+        <div class="card-block-small"   >
+    <img  class=" card1-icon" src="{{ url_for('static', filename='Snapseed.jpg') }}">
+    <span class="text-c-blue f-w-600">{{b['Rating']}}* <h3> {{b['Broker']}}</h3></span>                                        
+    <div class="card-body" style="padding:0%;margin:0%;">
+        <p style="float: left;padding:0%;margin:0%;">Foundation Year :{{b['Foundation_Year']}} </p><br>
+        <p style="float: left;padding:0%;margin:0%;"> Deposit :{{b['MINIMUM Deposite']}}</p><br>
+        <p style="float: left;padding:0%;margin:0%;"> Bid : {{b['Average_Bid']}}</p><br>
+        <span class="f-left m-t-10 text-muted" style="float: right;">
+            <a href={{b['URL']}}><i class="text-c-blue f-16 icofont icofont-warning m-r-10" ></i>Visit</a>
+        </span>
+    </div>
+    </div>
+    </div>
+  </div>

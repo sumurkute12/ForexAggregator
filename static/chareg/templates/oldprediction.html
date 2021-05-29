@@ -1,0 +1,197 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+ 
+    
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <!--map-->
+     <script defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfsKuxzNFFAg4E6hcPHJ0K06dpkHyuVsw&callback=initMap">
+ </script>
+ <!-- <script
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+       defer
+     ></script> -->
+    <title>Forex Aggregator</title>
+    
+    <!-- style Starts Here -->
+    <style>
+        #mob
+        {
+            display: none;
+        }
+        #titles
+        {
+            background-image: url("https://cutewallpaper.org/21/real-estate-wallpaper-backgrounds/Background-Image-Real-Estate-Background-Png-PNG-Image-.png");
+           
+        }
+        body
+        {
+            font-family: "Open Sans", Arial, sans-serif;
+            color: "#777";
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        .mytext
+        {
+            color: #000;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .topmargin{
+                margin-top: 5%;
+            }
+        
+        }
+        a, h1, h2       { color: #377ba8; }
+        h1, h2          { margin: 0; }
+        h1              { border-bottom: 2px solid #eee; }
+        h2              { font-size: 1.2em; }
+        html { width: 100%; height:100%;  }
+        table.dataframe, .dataframe th, .dataframe td {
+        border: none;
+        border-bottom: 1px solid #C8C8C8;
+        border-collapse: collapse;
+        text-align:left;
+        padding: 10px;
+        margin-bottom: 40px;
+        font-size: 0.9em;
+        }
+    
+        .bid th {
+            background-color: #add8e6;
+            color: white;
+        }
+
+        .ask th {
+            background-color: #77dd77;
+            color: white;
+
+        }
+        th:{ background-color:red; }
+        /* tr:nth-child(odd)		{ background-color:rebeccapurple; } */
+        /* tr:nth-child(even)	{ background-color:greenyellow; } */
+        tr:hover            { background-color:black;}
+    </style>
+  </head>
+  <body>
+
+<!-- navigation bar starts here -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="padding: 1%;">
+    <div class="container">
+        <h5>
+        <a class="navbar-brand " href="#">
+            <img src="IMG/rs.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <b>Forex Aggregator</b>
+        </a>
+        </h5>  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav " style="font-size: large;">
+            <li class="nav-item active">
+            <a class="nav-link" href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Home <span class="sr-only">(current)</span></a>
+            
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="project.html"><i class="fa fa-building fa-fw" aria-hidden="true"></i>&nbsp;Properties</a>
+            </li>
+            <li class="nav-item active" >
+            <a class="nav-link" href="aboutus.html"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;About</a>
+            </li>
+            
+            
+
+        </ul>
+        </div>
+    </div>
+    </nav>
+<!-- Navigation Bar Ends Here -->
+
+    <div class=" col-md-12 " style="padding: 3%;"  id="titles">
+        <div class="container">
+            <br>
+        <h1 class="text-dark" style="line-height: 1;font-weight: 10;">        
+           <b style="color:#607d8b;"> Broker's Recommended </b>
+        </h1>
+        <br><br>
+        <div id="mob"><br><br></div>
+    </div>
+    </div>    
+    <br><br>
+    <title>Simple tables</title>
+    <div class="page">
+        <div class="container" >
+            <div class="row">
+            <!-- <div style=" width: 80%; float: left;"> -->
+            {% for table in tables %}
+            <div class="col-md-6 " style="color:#777;">
+                <h2 >{{titles[loop.index]}}</h2><br>
+                {{ table|safe }}
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 " style="color:#777;">
+                <h4 class="mytext mt-4"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Send a Message</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus.</p>
+                <br>
+            </div>
+        </div>
+    </div>
+                
+
+    
+<!-- footer -->
+     <div  style="padding: 2%;background-color: #212529;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 topmargin" >     
+                    <h5 class="card-title text-white"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Company Name</h5>
+                    <div class="text-muted" style="color:whitesmoke;text-decoration:none;">
+                    1355 Market St, Suite 900<br>
+                    San Francisco, CA 94103<br>
+                    P: (123) 456-7890 <br>
+                    xyz@gmail.com
+                    </div>
+                </div>
+                
+                <div class=" col-md-2 topmargin" >
+                    <h5 class="card-title text-white"><i class="fa fa-link fa-fw" aria-hidden="true"></i>&nbsp;Links</h5>
+                    <div class="text-muted" style="color:whitesmoke;text-decoration:none;">
+                    Who We Are<br>
+                    Contact<br>
+                    </div>   
+                </div>
+                <div class=" col-md-4 topmargin" >
+                    <h5 class="card-title text-white"><i class="fa fa-newspaper fa-fw" aria-hidden="true"></i>&nbsp;Latest News</h5>
+                    <div class="text-muted" style="color:whitesmoke;text-decoration:none;">
+                        If you have any suggestions for the next updates, let us know.<br>
+                        If you have any suggestions for the next updates, let us know.<br>
+                    </div>              
+                </div>
+            </div>
+            <br>
+            <hr style="background-color:#777;">
+            <p class="text-muted">© Copyright 2020. All Rights Reserved.</p>
+        </div>
+    </div> 
+<!-- Footer Bar Ends Here -->
+  </body>
+</html>
